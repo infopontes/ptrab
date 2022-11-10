@@ -7,7 +7,7 @@ from unidade.models import Unidade
 
 class Despesa(models.Model):
     ND_15 = 15
-    ND_30 = 30
+    ND_30 = '33.90.30'
     ND_33 = 33
     ND_39 = 39
     ND_40 = 40
@@ -24,7 +24,7 @@ class Despesa(models.Model):
 
     tipo_despesa_id = models.ForeignKey(TipoDespesa, on_delete=models.CASCADE, verbose_name='Tipo')
     unidade_id = models.ForeignKey(Unidade, on_delete=models.CASCADE, verbose_name='Unidade')
-    nd = models.CharField(max_length=5, choices=ND_CHOICES, blank=False, null=False, verbose_name='ND')
+    nd = models.CharField(max_length=15, choices=ND_CHOICES, blank=False, null=False, verbose_name='ND')
     valor = models.DecimalField(max_digits = 10, decimal_places = 2, verbose_name='Valor (R$)')
     memoria_calculo = models.TextField('Memória Cálculo')
     ptrab_id = models.ForeignKey(Ptrab, on_delete=models.CASCADE, verbose_name='PTrab')

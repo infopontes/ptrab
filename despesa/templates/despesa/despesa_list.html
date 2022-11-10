@@ -9,7 +9,7 @@
     <div class="col">
       <form
         class="form-inline p-1"
-        hx-post="{ url 'despesa:despesa_create' %}"
+        hx-post="{% url 'despesa:despesa_create' %}"
         hx-target="#despesaTbody"
         hx-indicator=".htmx-indicator"
         hx-swap="afterbegin"
@@ -77,7 +77,8 @@
       <table class="table">
         <thead>
           <tr>
-            <th></th>
+            <th>#</th>
+            <th>P Trab</th>
             <th>Tipo despesa</th>
             <th>OM</th>
             <th>ND</th>
@@ -103,8 +104,12 @@
     });
     htmx.on("htmx:afterSwap", function(evt) {
       if (evt.target.id == 'despesaTbody') {
-        document.getElementById('id_description').value = ''
-        document.getElementById('id_value').value = ''
+        document.getElementById('ptrab_id').value = ''
+        document.getElementById('tipo_despesa_id').value = ''
+        document.getElementById('unidade_id').value = ''
+        document.getElementById('nd').value = ''
+        document.getElementById('valor').value = ''
+        document.getElementById('memoria_calculo').value = ''
       }
     });
   </script>

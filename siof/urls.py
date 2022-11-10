@@ -7,9 +7,9 @@ from drf_yasg import openapi
 
 schema_view = get_schema_view(
     openapi.Info(
-        title="SIOFI API",
+        title="SisPTrab API",
         default_version='v1',
-        description="API para integração entre sistemas de gestão financeira das operações.",
+        description="API para integração entre sistemas de gestão de planos de trabalho das operações.",
         terms_of_service="https://www.coter.eb.mil.br/policies/terms/",
         contact=openapi.Contact(email="mpontes@coter.eb.mil.br"),
         license=openapi.License(name="BSD License"),
@@ -42,3 +42,7 @@ urlpatterns += [
    re_path(r'^swagger/$', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),  # noqa E501
    re_path(r'^redoc/$', schema_view.with_ui('redoc', cache_timeout=0), name='schema-redoc'),  # noqa E501
 ]
+
+admin.site.site_header  =  "SisPTrab - Sistema de Plano de Trabalho"  
+admin.site.site_title  =  "SisPTrab"
+admin.site.index_title  =  "Painel Admin"

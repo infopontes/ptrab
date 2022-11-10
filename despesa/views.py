@@ -13,3 +13,19 @@ def despesa_list(request):
 
     context = {'object_list': despesas, 'form': form}
     return render(request, template_name, context)
+
+
+@require_http_methods(['POST'])
+def despesa_create(request):
+    despesa = None
+    if request.POST['nd'] == '30':
+        print(request.POST['nd'])
+    form = DespesaForm(request.POST or None)
+    
+    if form.is_valid():
+        despesa = form.save()
+    else:
+        print(form.errors)
+
+    context = {'object': despesa}
+    return render(request, 'despesa/hx/despesa_hx.html', context)

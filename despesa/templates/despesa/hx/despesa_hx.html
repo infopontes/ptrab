@@ -11,8 +11,12 @@
       value="{{ object.pk }}"
     >
   </td>
-  <td>{{ object.description }}</td>
-  <td>{{ object.value }}</td>
+  <td>{{ object.ptrab_id }}</td>
+  <td>{{ object.tipo_despesa_id }}</td>
+  <td>{{ object.unidade_id }}</td>
+  <td>{{ object.nd }}</td>
+  <td>{{ object.valor }}</td>
+  <td>{{ object.memoria_calculo }}</td>
   <td class="text-center">
     {% if object.paid %}
       <span>
@@ -25,11 +29,11 @@
     {% endif %}
   </td>
   <td class="text-center">
-    <span hx-get="{% url 'expense:expense_detail' object.pk %}">
+    <span hx-get="{ url 'expense:expense_detail' object.pk %}">
       <i class="fa fa-pencil-square-o link span-is-link"></i>
     </span>
     <span
-      hx-delete="{% url 'expense:expense_delete' object.pk %}"
+      hx-delete="{ url 'expense:expense_delete' object.pk %}"
       hx-confirm="Deseja mesmo deletar?"
       hx-target="closest tr"
       hx-swap="outerHTML swap:500ms"
