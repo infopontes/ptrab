@@ -9,7 +9,7 @@ class Despesa(models.Model):
     ND_15 = 15
     ND_30 = '33.90.30'
     ND_33 = 33
-    ND_39 = 39
+    ND_39 = '33.90.39'
     ND_40 = 40
     ND_52 = 52
 

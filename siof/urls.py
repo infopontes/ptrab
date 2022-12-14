@@ -7,9 +7,9 @@ from drf_yasg import openapi
 
 schema_view = get_schema_view(
     openapi.Info(
-        title="SisPTrab API",
+        title="SGLogEmp API",
         default_version='v1',
-        description="API para integração entre sistemas de gestão de planos de trabalho das operações.",
+        description="API para integração entre sistemas.",
         terms_of_service="https://www.coter.eb.mil.br/policies/terms/",
         contact=openapi.Contact(email="mpontes@coter.eb.mil.br"),
         license=openapi.License(name="BSD License"),
@@ -43,6 +43,6 @@ urlpatterns += [
    re_path(r'^redoc/$', schema_view.with_ui('redoc', cache_timeout=0), name='schema-redoc'),  # noqa E501
 ]
 
-admin.site.site_header  =  "SisPTrab - Sistema de Plano de Trabalho"  
-admin.site.site_title  =  "SisPTrab"
+admin.site.site_header  =  "SGLogEmp - Sistema de Gestão e Logística da Chefia do Emprego da Força Terrestre"  
+admin.site.site_title  =  "SGLogEmp"
 admin.site.index_title  =  "Painel Admin"
