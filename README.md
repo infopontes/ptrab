@@ -1,4 +1,18 @@
-<h1 align="center"> SisPTrab - Sistema de Plano de Trabalho </h1>
+<h1 align="center"> SGLogEmp - Sistema de Gestão e Logística da Chefia do Emprego da Força Terrestre</h1>
+
+## Como rodar o projeto?
+
+* Clone esse repositório.
+* Crie um virtualenv com Python 3.
+* Ative o virtualenv.
+* Instale as dependências.
+* Rode as migrações.
+
+```
+python -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
+
 
 <p align="center">
 <img src="http://img.shields.io/static/v1?label=STATUS&message=EM%20DESENVOLVIMENTO&color=GREEN&style=for-the-badge"/>
